@@ -1,0 +1,15 @@
+<div class="input-bar">
+  <h3>Input component</h3>
+  <div>
+    <label for="mlfb">MLFB: </label>
+    <input id="mlfb" [(ngModel)]="input.mlfb" placeholder="MLFB">
+    <label for="inventoryNmbr">Inventory Number: </label>
+    <input id="inventoryNmbr" [(ngModel)]="input.inventoryNumber" placeholder="Inventory Number">
+    <label for="serialNmbr">Serial Number: </label>
+    <input id="serialNmbr" [(ngModel)]="input.serialNumber" placeholder="Serial Number">
+    <label for="prototypeId">Prototype Id: </label>
+    <input id="prototypeId" [(ngModel)]="input.prototypeId" placeholder="Prototype Id">
+
+    <button (click)="validateItem()">Add</button>
+  </div>
+</div>

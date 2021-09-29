@@ -1,0 +1,22 @@
+<div class="table-bar">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>MLFB</th>
+                <th>Inventory Nr.</th>
+                <th>Prototype Id</th>
+                <th>Serial Nr.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>{{item.id}}</td>
+                <td>{{item.mlfb}}</td>
+                <td>{{item.inventoryNumber}}</td>
+                <td>{{item.prototypeId}}</td>
+                <td>{{item.serialNumber}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
