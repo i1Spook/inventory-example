@@ -20,7 +20,21 @@ export class InputComponent implements OnInit {
 
   validateItem(): void {
     console.log("Check validity")
-    if (this.input.mlfb != "" && this.input.serialNumber != "") {
+
+    /* Input check: 
+        Mandatory fields (Device Type, MLFB, SerialNumber) must be filled AND have appropriate length
+        Optional fields (InventoryNumber, PrototypeID) must be empty OR have appropriate length
+    */
+    let validMLFBLength = 32;
+    let validSNLength = 16;
+    let validINLength = 10;
+    let validPTIDLength = 6;
+
+    if (this.input.deviceType != "" && 
+        this.input.mlfb != "" && this.input.mlfb.length == validMLFBLength && 
+        this.input.serialNumber != "" && this.input.serialNumber.length == validSNLength &&
+       (this.input.inventoryNumber == "" || this.input.inventoryNumber.length == validINLength) &&
+       (this. input.prototypeId == "" || this.input.prototypeId.length == validPTIDLength)) {
       console.log("Item valid");
       this.itemValid.emit(this.input);
       this.input = new DeviceInput();

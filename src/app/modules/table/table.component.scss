@@ -1,4 +1,76 @@
 .table-bar{
-    background: lightblue;
-    margin-top: 5px;
+    background-color: rgb(240, 240, 245);
+    margin: 5px;
+    padding: 5px;
+}
+
+/* tag: top right bottom left; */
+
+tr{
+    padding: 5px;
+}
+
+th{
+    float: left;
+    margin: 5px 20px;
+    padding: 5px 10px;
+}
+
+td{
+    float: left;
+    margin: 5px 20px;
+    padding: 5px 10px;
+}
+
+.items-header{
+    float: left;
+    margin: 0px 20px;
+    padding: 5px 5px;
+}
+
+.items{
+    float: left;
+    margin: 0px 20px;
+    padding: 5px 5px;
+    border-radius: 15px;
+    width: 1820;
+    max-width: 1820px;
+    min-width: 1820px;
+    background-color: rgb(248, 249, 250);
+}
+
+#inventoryIdHead{
+    margin: 5px 5px;
+}
+
+#inventoryIdData{
+    margin: 5px 30px;
+}
+
+#deviceTypeHead, #inventoryNumberHead{
+    margin: 5px 80px;
+}
+
+#MLFBHead, #serialNumberHead, #prototypeIdHead{
+    margin: 5px 110px;
+}
+
+#deviceTypeData{
+    margin: 5px 125px;
+}
+
+#inventoryNumberData{
+    margin: 5px 85px;
+}
+
+#MLFBData {
+    margin: 5px -5px;
+}
+
+#serialNumberData{
+    margin: 5px 60px;
+}
+
+#prototypeIdData{
+    margin: 5px 120px;
 }

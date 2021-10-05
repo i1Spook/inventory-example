@@ -1,15 +1,38 @@
 <div class="input-bar">
-  <h3>Input component</h3>
-  <div>
-    <label for="mlfb">MLFB: </label>
-    <input id="mlfb" [(ngModel)]="input.mlfb" placeholder="MLFB">
-    <label for="inventoryNmbr">Inventory Number: </label>
-    <input id="inventoryNmbr" [(ngModel)]="input.inventoryNumber" placeholder="Inventory Number">
-    <label for="serialNmbr">Serial Number: </label>
-    <input id="serialNmbr" [(ngModel)]="input.serialNumber" placeholder="Serial Number">
-    <label for="prototypeId">Prototype Id: </label>
-    <input id="prototypeId" [(ngModel)]="input.prototypeId" placeholder="Prototype Id">
+  <div class="input-row">
 
-    <button (click)="validateItem()">Add</button>
+    <div class="h3">
+      <label>Add Device</label>
+    </div>
+
+    <div class="input">
+      <label for="deviceType">Device Type (?) </label>
+      <select id="deviceType" [(ngModel)]="input.deviceType" placeholder="Device Type">
+        <option selected value="">Choose Device Type</option>
+        <option value="PC">PC</option>
+        <option value="PLC">PLC</option>
+        <option value="HMI">HMI</option>
+      </select>
+    </div>
+    <div class="input">
+      <label for="mlfb">MLFB (?) </label>
+      <input id="mlfb" [(ngModel)]="input.mlfb" placeholder="MLFB">
+    </div>
+    <div class="input">
+      <label for="serialNmbr">Serial Number (?) </label>
+      <input id="serialNmbr" [(ngModel)]="input.serialNumber" placeholder="Serial Number">
+    </div>
+    <div class="input">
+      <label for="inventoryNmbr">Inventory Number (?) </label>
+      <input id="inventoryNmbr" [(ngModel)]="input.inventoryNumber" placeholder="Inventory Number (optional)">
+    </div>
+    <div class="input">
+      <label for="prototypeId">Prototype ID (?) </label>
+      <input id="prototypeId" [(ngModel)]="input.prototypeId" placeholder="Prototype ID (optional)">
+    </div>
+
+    <div class="add-button">
+      <button (click)="validateItem()">Add</button>
+    </div>
   </div>
 </div>
