@@ -20,4 +20,15 @@ export class MainComponent implements OnInit {
     console.table(item);
     this.inputs.push(item);
   }
+
+  openExportPopUp(): void {
+    /*open PopUp Window*/
+  }
+
+  generateIds(): void {
+    let number = this.inputs.length;
+    for (let index = 0; index < number; index++) {
+      this.inputs[index].inventoryId = index.toString();
+    }
+  }
 }

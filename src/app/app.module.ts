@@ -7,6 +7,7 @@ import { MainComponent } from './modules/main/main.component';
 import { InputComponent } from './modules/input/input.component';
 import { TableComponent } from './modules/table/table.component';
 import { FormsModule } from '@angular/forms';
+import { ModalPopUpComponent } from './modules/modal-pop-up/modal-pop-up.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     MainComponent,
     InputComponent,
-    TableComponent
+    TableComponent,
+    ModalPopUpComponent
   ],
   imports: [
     BrowserModule,

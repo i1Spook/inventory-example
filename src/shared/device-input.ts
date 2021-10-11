@@ -1,12 +1,14 @@
 export class DeviceInput {
-    id: string;
+    inventoryId: string;
+    deviceType: string;
     mlfb: string;
     inventoryNumber: string;
     prototypeId: string;
     serialNumber: string;
 
     constructor(){
-        this.id = "";
+        this.inventoryId = "123456"; /* added default value for testing purposes */
+        this.deviceType = "";
         this.mlfb = "";
         this.inventoryNumber = "";
         this.prototypeId = "";

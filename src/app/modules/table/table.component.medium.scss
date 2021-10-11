@@ -1,8 +1,5 @@
-@import "src/app/modules/table/table.component.small.scss";
-@import "src/app/modules/table/table.component.medium.scss";
-
-/* For PC */
-@media screen and (min-width: 1600px) and (max-width: 1920px) {
+/* For Laptop */
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
     .table-bar{
         background-color: rgb(240, 240, 245);
         margin: 5px;
@@ -38,38 +35,50 @@
         margin: 0px 20px;
         padding: 5px 5px;
         border-radius: 15px;
-        width: 1820;
+        width: 1420;
         max-width: 1820px;
-        min-width: 1820px;
+        min-width: 1420px;
         background-color: rgb(248, 249, 250);
     }
     
     #inventoryIdHead{
-        margin: 5px 5px;
+        margin: 5px 0px;
     }
     
     #inventoryIdData{
-        margin: 5px 30px;
+        margin: 5px 25px;
     }
     
-    #deviceTypeHead, #inventoryNumberHead{
+    #deviceTypeHead{
+        margin: 5px 65px;
+    }
+
+    #inventoryNumberHead{
+        margin: 5px 50px;
+    }
+    
+    #MLFBHead, #serialNumberHead{
+        margin: 5px 75px;
+    }
+
+    #prototypeIdHead{
         margin: 5px 80px;
     }
-    
-    #MLFBHead, #serialNumberHead, #prototypeIdHead{
-        margin: 5px 110px;
+
+    #serialNumberHead{
+        margin: 5px 95px;
     }
     
     #deviceTypeData{
-        margin: 5px 125px;
+        margin: 5px 115px;
     }
     
     #inventoryNumberData{
-        margin: 5px 85px;
+        margin: 5px 55px;
     }
     
     #MLFBData {
-        margin: 5px -5px;
+        margin: 5px -55px;
     }
     
     #serialNumberData{
@@ -77,6 +86,6 @@
     }
     
     #prototypeIdData{
-        margin: 5px 120px;
+        margin: 5px 100px;
     }
 }

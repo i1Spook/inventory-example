@@ -1,5 +1,13 @@
 <div class="main-bar">
-    <h2>Main Component</h2>
+    <h2>Inventory Monitor</h2>
+    <hr/>
     <app-input (itemValid)="addItem($event)"></app-input>
     <app-table [items]="inputs"></app-table>
+
+    <div class="export-button">
+        <button (click)="openExportPopUp()">Export...</button>
+    </div>
+    <div class="generate-button">
+        <button (click)="generateIds()">Generate IDs</button>
+    </div>
 </div>

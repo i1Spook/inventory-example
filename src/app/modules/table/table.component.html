@@ -2,20 +2,26 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>MLFB</th>
-                <th>Inventory Nr.</th>
-                <th>Prototype Id</th>
-                <th>Serial Nr.</th>
+                <span class="items-header">
+                    <th id="inventoryIdHead">Inventory ID (?)</th>
+                    <th id="deviceTypeHead">Device Type</th>
+                    <th id="MLFBHead">MLFB</th>
+                    <th id="serialNumberHead">Serial Nr.</th>
+                    <th id="inventoryNumberHead">Inventory Nr.</th>
+                    <th id="prototypeIdHead">Prototype ID</th>   
+                </span>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let item of items">
-                <td>{{item.id}}</td>
-                <td>{{item.mlfb}}</td>
-                <td>{{item.inventoryNumber}}</td>
-                <td>{{item.prototypeId}}</td>
-                <td>{{item.serialNumber}}</td>
+                <span class="items">
+                    <td id="inventoryIdData">{{item.inventoryId}}</td>
+                    <td id="deviceTypeData">{{item.deviceType}}</td>
+                    <td id="MLFBData">{{item.mlfb}}</td>
+                    <td id="serialNumberData">{{item.serialNumber}}</td>
+                    <td id="inventoryNumberData">{{item.inventoryNumber}}</td>
+                    <td id="prototypeIdData">{{item.prototypeId}}</td>
+                </span>
             </tr>
         </tbody>
     </table>
