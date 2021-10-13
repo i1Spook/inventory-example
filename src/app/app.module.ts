@@ -7,8 +7,9 @@ import { MainComponent } from './modules/main/main.component';
 import { InputComponent } from './modules/input/input.component';
 import { TableComponent } from './modules/table/table.component';
 import { FormsModule } from '@angular/forms';
-import { ModalPopUpComponent } from './modules/modal-pop-up/modal-pop-up.component';
 
+import { ModalModule } from './modules/_modal';
+import { ExportsComponent } from './modules/exports/exports.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,13 @@ import { ModalPopUpComponent } from './modules/modal-pop-up/modal-pop-up.compone
     MainComponent,
     InputComponent,
     TableComponent,
-    ModalPopUpComponent
+    ExportsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

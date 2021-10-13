@@ -1,13 +1,23 @@
 <div class="main-bar">
     <h2>Inventory Monitor</h2>
-    <hr/>
+    <hr id="top-linebreak"/>
     <app-input (itemValid)="addItem($event)"></app-input>
     <app-table [items]="inputs"></app-table>
 
-    <div class="export-button">
-        <button (click)="openExportPopUp()">Export...</button>
+    <div class="bottom-button">
+        <div class="generate-button">
+            <button (click)="generateIds()">Generate IDs</button>
+        </div>
+        <div class="export-button">
+            <button (click)="openExportPopUp('export-modal')">Export...</button>
+        </div>
     </div>
-    <div class="generate-button">
-        <button (click)="generateIds()">Generate IDs</button>
-    </div>
+
+    <jw-modal id="export-modal">
+        <!-- Make new component -->
+        <app-exports></app-exports>
+        <button class="closeExportPopUp" (click)="closeExportPopUp('export-modal')">Close</button>
+    </jw-modal>
+    
+    <hr id="bottom-linebreak"/>
 </div>
