@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ModalModule } from './modules/_modal';
 import { ExportsComponent } from './modules/exports/exports.component';
+import { TooltipComponent } from './modules/tooltip/tooltip.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ExportsComponent } from './modules/exports/exports.component';
     MainComponent,
     InputComponent,
     TableComponent,
-    ExportsComponent
+    ExportsComponent,
+    TooltipComponent
   ],
   imports: [
     BrowserModule,

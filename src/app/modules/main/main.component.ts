@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { DeviceInput } from 'src/shared/device-input';
 
 import { ModalService } from 'src/app/modules/_modal';
-import * as FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-main',
@@ -12,6 +11,8 @@ import * as FileSaver from 'file-saver';
 })
 export class MainComponent implements OnInit {
   inputs: DeviceInput[] = [];
+
+  //@Output() populatedInputs = new EventEmitter<DeviceInput[]>();
 
   constructor(private modalService: ModalService) { }
 
@@ -23,6 +24,8 @@ export class MainComponent implements OnInit {
     console.table(item);
     
     this.inputs.push(item);
+
+    //this.populatedInputs.emit(this.inputs);
     console.log(JSON.stringify(this.inputs));
   }
 
@@ -32,21 +35,6 @@ export class MainComponent implements OnInit {
 
   closeExportPopUp(id: string): void {
     this.modalService.close(id);
-  }
-
-  // Put in new component (DONE) -> Make export work -> make (?) work -> -scss Doku lesen (difference zu .less) -> angular modal popup nachsehen
-  exportAsJson(): void{
-    // Add export logic
-    
-    let jsonString = JSON.stringify(this.inputs);
-    let file = new File(["jsonString"], "InventoryList", {type: "application/json"});
-    FileSaver.saveAs(file);
-    console.log("Exported as JSON!");
-  }
-
-  exportAsCsv(): void{
-    // Add export logic
-    console.log("Exported as CSV!");
   }
 
   generateIds(): void {

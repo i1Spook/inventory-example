@@ -6,7 +6,8 @@
     </div>
 
     <div class="input">
-      <label for="deviceType">Device Type (?) </label>
+      <label for="deviceType">Device Type</label>
+      <app-tooltip></app-tooltip>
       <select id="deviceType" [(ngModel)]="input.deviceType" placeholder="Device Type">
         <option selected value="">Choose Device Type</option>
         <option value="PC">PC</option>
@@ -15,19 +16,20 @@
       </select>
     </div>
     <div class="input">
-      <label for="mlfb">MLFB (?) </label>
+      <label for="mlfb">MLFB</label>
+      <app-tooltip></app-tooltip>
       <input id="mlfb" [(ngModel)]="input.mlfb" placeholder="MLFB">
     </div>
     <div class="input">
-      <label for="serialNmbr">Serial Number (?) </label>
+      <label for="serialNmbr">Serial Number</label>
       <input id="serialNmbr" [(ngModel)]="input.serialNumber" placeholder="Serial Number">
     </div>
     <div class="input">
-      <label for="inventoryNmbr">Inventory Number (?) </label>
+      <label for="inventoryNmbr">Inventory Number</label>
       <input id="inventoryNmbr" [(ngModel)]="input.inventoryNumber" placeholder="Inventory Number (optional)">
     </div>
     <div class="input">
-      <label for="prototypeId">Prototype ID (?) </label>
+      <label for="prototypeId">Prototype ID</label>
       <input id="prototypeId" [(ngModel)]="input.prototypeId" placeholder="Prototype ID (optional)">
     </div>
 
