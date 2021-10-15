@@ -7,7 +7,9 @@
 
     <div class="input">
       <label for="deviceType">Device Type</label>
-      <app-tooltip></app-tooltip>
+      <app-tooltip>
+        <p>Please select the type of your device.</p>
+      </app-tooltip>
       <select id="deviceType" [(ngModel)]="input.deviceType" placeholder="Device Type">
         <option selected value="">Choose Device Type</option>
         <option value="PC">PC</option>
@@ -17,19 +19,30 @@
     </div>
     <div class="input">
       <label for="mlfb">MLFB</label>
-      <app-tooltip></app-tooltip>
+      <app-tooltip>
+        <p>Please enter 32-digit MLFB.</p>
+      </app-tooltip>
       <input id="mlfb" [(ngModel)]="input.mlfb" placeholder="MLFB">
     </div>
     <div class="input">
       <label for="serialNmbr">Serial Number</label>
+      <app-tooltip>
+        <p>Please enter 16-digit Serial Number.</p>
+      </app-tooltip>
       <input id="serialNmbr" [(ngModel)]="input.serialNumber" placeholder="Serial Number">
     </div>
     <div class="input">
       <label for="inventoryNmbr">Inventory Number</label>
+      <app-tooltip>
+        <p>Please enter 12-digit Inventory Number (optional).</p>
+      </app-tooltip>
       <input id="inventoryNmbr" [(ngModel)]="input.inventoryNumber" placeholder="Inventory Number (optional)">
     </div>
     <div class="input">
       <label for="prototypeId">Prototype ID</label>
+      <app-tooltip>
+        <p>Please enter 10-digit Prototype ID (optional).</p>
+      </app-tooltip>
       <input id="prototypeId" [(ngModel)]="input.prototypeId" placeholder="Prototype ID (optional)">
     </div>
 

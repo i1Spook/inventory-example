@@ -14,8 +14,7 @@
     </div>
 
     <jw-modal id="export-modal">
-        <!-- Make new component -->
-        <app-exports></app-exports>
+        <app-exports [populatedInputs]="inputs"></app-exports>
         <button class="closeExportPopUp" (click)="closeExportPopUp('export-modal')">Close</button>
     </jw-modal>
     
