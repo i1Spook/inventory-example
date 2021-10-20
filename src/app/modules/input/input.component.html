@@ -1,53 +1,50 @@
-<div class="input-bar">
-  <div class="input-row">
+<div id="input-bar">
+  <div id="input-bar-title" class="input-container">
+    <div>Add Device</div>
+  </div>
 
-    <div class="h3">
-      <label>Add Device</label>
-    </div>
+  <div class="input-container">
+    <app-tooltip>
+      Please select the type of your device. Lorem ipsum dolor bla bla bla Please select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla bla
+    </app-tooltip>
+    <label class="input-label" for="deviceType">Device Type</label>
+    <select id="deviceType" [(ngModel)]="input.deviceType" placeholder="Device Type">
+      <option selected value="">Choose Device Type</option>
+      <option value="PC">PC</option>
+      <option value="PLC">PLC</option>
+      <option value="HMI">HMI</option>
+    </select>
+  </div>
+  <div class="input-container">
+    <app-tooltip>
+      Please enter 32-digit MLFB.
+    </app-tooltip>
+    <label class="input-label" for="mlfb">MLFB</label>
+    <input id="mlfb" [(ngModel)]="input.mlfb" placeholder="MLFB">
+  </div>
+  <div class="input-container">
+    <app-tooltip>
+      Please enter 16-digit Serial Number.
+    </app-tooltip>
+    <label class="input-label" for="serialNmbr">Serial Number</label>
+    <input id="serialNmbr" [(ngModel)]="input.serialNumber" placeholder="Serial Number">
+  </div>
+  <div class="input-container">
+    <app-tooltip>
+      Please enter 12-digit Inventory Number (optional).
+    </app-tooltip>
+    <label class="input-label" for="inventoryNmbr">Inventory Number</label>
+    <input id="inventoryNmbr" [(ngModel)]="input.inventoryNumber" placeholder="Inventory Number (optional)">
+  </div>
+  <div class="input-container">
+    <app-tooltip>
+      Please enter 10-digit Prototype ID (optional).
+    </app-tooltip>
+    <label class="input-label" for="prototypeId">Prototype ID</label>
+    <input id="prototypeId" [(ngModel)]="input.prototypeId" placeholder="Prototype ID (optional)">
+  </div>
 
-    <div class="input">
-      <label for="deviceType">Device Type</label>
-      <app-tooltip>
-        <p>Please select the type of your device.</p>
-      </app-tooltip>
-      <select id="deviceType" [(ngModel)]="input.deviceType" placeholder="Device Type">
-        <option selected value="">Choose Device Type</option>
-        <option value="PC">PC</option>
-        <option value="PLC">PLC</option>
-        <option value="HMI">HMI</option>
-      </select>
-    </div>
-    <div class="input">
-      <label for="mlfb">MLFB</label>
-      <app-tooltip>
-        <p>Please enter 32-digit MLFB.</p>
-      </app-tooltip>
-      <input id="mlfb" [(ngModel)]="input.mlfb" placeholder="MLFB">
-    </div>
-    <div class="input">
-      <label for="serialNmbr">Serial Number</label>
-      <app-tooltip>
-        <p>Please enter 16-digit Serial Number.</p>
-      </app-tooltip>
-      <input id="serialNmbr" [(ngModel)]="input.serialNumber" placeholder="Serial Number">
-    </div>
-    <div class="input">
-      <label for="inventoryNmbr">Inventory Number</label>
-      <app-tooltip>
-        <p>Please enter 12-digit Inventory Number (optional).</p>
-      </app-tooltip>
-      <input id="inventoryNmbr" [(ngModel)]="input.inventoryNumber" placeholder="Inventory Number (optional)">
-    </div>
-    <div class="input">
-      <label for="prototypeId">Prototype ID</label>
-      <app-tooltip>
-        <p>Please enter 10-digit Prototype ID (optional).</p>
-      </app-tooltip>
-      <input id="prototypeId" [(ngModel)]="input.prototypeId" placeholder="Prototype ID (optional)">
-    </div>
-
-    <div class="add-button">
-      <button (click)="validateItem()">Add</button>
-    </div>
+  <div id="add-button-container">
+    <button id="add-button" (click)="validateItem()">Add</button>
   </div>
 </div>

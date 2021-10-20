@@ -1,71 +1,78 @@
-.help-tip{
-    position: absolute;
-    top: 115px;
-    right: 1580px;
+/* tag: top right bottom left; */
+/* class: multiple elements, id: single elements*/
+
+.help-tip-container{
+    position: relative;
+    /*display: inline-block;*/
+    display:none;
+    top: 1em;
+    left: 16.5em;
     text-align: center;
     background-color: #afd1e2;
     border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    line-height: 20px;
+    width: 1.125em;
+    height: 1.125em;
+    line-height: 1.25em;
     cursor: default;
 }
 
-.help-tip:before{
+.help-tip-container:before{
     content:'?';
     font-weight: bold;
     color:#fff;
 }
 
-.help-tip:hover p{
-    display:block;
+.help-tip-container:hover p{
+    display:table;
     transform-origin: 100% 0%;
 
     -webkit-animation: fadeIn 0.3s ease-in-out;
     animation: fadeIn 0.3s ease-in-out;
-
 }
 
-.help-tip p{    /* The tooltip */
+// Tooltip start
+p{    /* The tooltip */
     display: none;
     text-align: center;
     background-color: #1E2021;
-    padding: 11px;
-    width: 300px;
-    margin: 5px 0px;
-    position: absolute;
-    border-radius: 3px;
+    padding: 1em;
+    min-width: 20em;
+    width: 25.75em;
+    margin: 0.3125em 0em;
+    position: relative;
+    border-radius: 0.3125em;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    right: -247px;
-    top: -52px;
+    right: 26em;
+    bottom: 0.15em;
     color: #FFF;
     font-size: 13px;
     line-height: 1.4;
+    z-index: 500;
 }
 
-.help-tip p:before{ /* The pointer of the tooltip */
-    position: absolute;
-    content: '';
+p:before{ /* The pointer of the tooltip */
+    position: relative;
+    content: "";
     width:0;
     height: 0;
     border:6px solid transparent;
-    border-bottom-color:#1E2021;
-    right:250px;
-    top:40px;
+    border-bottom-color:black;
+    left: 21.1em;
+    bottom: 2.7em;
     transform: rotate(180deg);
+    z-index: 500;
 }
 
-.help-tip p:after{ /* Prevents the tooltip from being hidden */
+p:after{ /* Prevents the tooltip from being hidden */
     width:100%;
     height:40px;
     content:'';
-    position: absolute;
-    top:-40px;
+    position: relative;
+    top:0em;
     left:0;
 }
 
 /* CSS animation */
-
 @-webkit-keyframes fadeIn {
     0% { 
         opacity:0; 
@@ -82,3 +89,4 @@
     0% { opacity:0; }
     100% { opacity:100%; }
 }
+// Tooltip end

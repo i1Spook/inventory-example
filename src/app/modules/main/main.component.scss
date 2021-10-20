@@ -1,13 +1,22 @@
-.main-bar{
+/* tag: top right bottom left; */
+/* class: multiple elements, id: single elements*/
+/* screen sizes: 360x640 (small mobile) 375x667 (average mobile) 1366x768 (average laptop) 1440x900 (average desktop) 1920x1080 (large desktop)*/
+/* fluidness: percentages, min-/max widths*/
+
+#main-page{
     position: relative;
     background-color: rgb(240, 240, 245);
-    padding: 10px;
-    min-height: 949px;
+    padding: 0.625em 1em;
+    min-height: 59em;
 }
 
-/* tag: top right bottom left; */
+#page-title{
+    margin: 1% 5.5%;
+    padding: 0.3em;
+    font-size: 2.5em;
+}
 
-hr {
+.linebreak {
     display: block;
     height: 1px;
     border: 0;
@@ -16,32 +25,16 @@ hr {
     padding: 0;
 }
 
-#bottom-linebreak{
-    position: relative;
-    bottom: -130px;
+#bottom-button-container{
+    text-align: right;
+    margin: 1% 0%;
 }
 
-h2{
-    margin-left: 100px;
+.bottom-buttons{
+    width: 12em;
+    margin-right: 1%;
 }
-
-.bottom-button{
-    display: inline-block;
-    position: relative;
-    bottom: -130px;
-    right: -1600px;
-}
-
-button{  
-    padding: 10px 30px;
-    margin-left: 5px;
-    border-radius: 5px;
-}
-
-.generate-button, .export-button{
-    display: inline-block;
-}
-
+// todo
 .closeExportPopUp{
     position: relative;
     left: -205px;

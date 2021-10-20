@@ -1,84 +1,71 @@
-@import "src/app/modules/table/table.component.small.scss";
-@import "src/app/modules/table/table.component.medium.scss";
+/* tag: top right bottom left; */
+/* class: multiple elements, id: single elements*/
+/* screen sizes: 360x640 (small mobile) 375x667 (average mobile) 1366x768 (average laptop) 1440x900 (average desktop) 1920x1080 (large desktop)*/
+/* fluidness: percentages, min-/max widths*/
 
-/* For PC */
-@media screen and (min-width: 1400px) {
-    .table-bar{
-        background-color: rgb(240, 240, 245);
-        margin: 5px;
-        padding: 5px;
-        height: 500px;
-        overflow-y: auto;
-    }
-    
-    /* tag: top right bottom left; */
-    
-    tr{
-        padding: 5px;
-    }
-    
-    th{
-        float: left;
-        margin: 5px 20px;
-        padding: 5px 10px;
-    }
-    
-    td{
-        float: left;
-        margin: 5px 20px;
-        padding: 5px 10px;
-    }
-    
-    .items-header{
-        float: left;
-        margin: 0px 20px;
-        padding: 5px 5px;
-    }
-    
-    .items{
-        float: left;
-        margin: 0px 20px;
-        padding: 5px 5px;
-        border-radius: 15px;
-        width: 1820;
-        max-width: 1820px;
-        min-width: 1820px;
-        background-color: rgb(248, 249, 250);
-    }
-    
-    #inventoryIdHead{
-        margin: 5px 5px;
-    }
-    
-    #inventoryIdData{
-        margin: 5px 30px;
-    }
-    
-    #deviceTypeHead, #inventoryNumberHead{
-        margin: 5px 80px;
-    }
-    
-    #MLFBHead, #serialNumberHead, #prototypeIdHead{
-        margin: 5px 110px;
-    }
-    
-    #deviceTypeData{
-        margin: 5px 125px;
-    }
-    
-    #inventoryNumberData{
-        margin: 5px 85px;
-    }
-    
-    #MLFBData {
-        margin: 5px -5px;
-    }
-    
-    #serialNumberData{
-        margin: 5px 60px;
-    }
-    
-    #prototypeIdData{
-        margin: 5px 120px;
-    }
+#table-container{
+    background-color: rgb(240, 240, 245);
+    padding: 1em 0em;
+    min-height: 40em;
+    max-height: 35em;
+    width: 100%;
+    min-width: 60em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#table-header-container{
+    display: -webkit-box;
+    padding: 0.625em 0.3125em;
+}
+
+#table-item-container{
+    display: -webkit-box;
+    margin: 1%;
+    padding: 0.3125em 0.3125em;
+    border-radius: 15px;
+    background-color: rgb(248, 249, 250);
+}
+
+.table-header{
+    margin: 0.3125em 4.5%;
+    padding: 0.625em 0.3125em;
+    width: 7%;
+}
+
+#table-header-invID{
+    margin: 0.3125em 2%;
+}
+
+.table-items{
+    width: 14%;
+    text-align: center;
+    margin: 0.3125em 0.625em;
+    padding: 0.3125em 0.625em;
+}
+
+#table-item-invID{
+    width: 3%;
+    margin-left: 1.2%;
+}
+#table-item-dt{
+    width: 5%;
+    margin-left: 9%;
+    margin-right: 2%;
+}
+#table-item-mlfb{
+    width: 14%;
+    margin: 0.3125em 4%;
+}
+#table-item-sn{
+    width: 8%;
+    margin: 0.3125em 1%;
+}
+#table-item-in{
+    width: 8%;
+    margin: 0.3125 7%;
+}
+#table-item-protID{
+    width: 5%;
+    margin: 0.3125em 2%
 }

@@ -1,28 +1,18 @@
-<div class="table-bar">
-    <table>
-        <thead>
-            <tr>
-                <span class="items-header">
-                    <th id="inventoryIdHead">Inventory ID (?)</th>
-                    <th id="deviceTypeHead">Device Type</th>
-                    <th id="MLFBHead">MLFB</th>
-                    <th id="serialNumberHead">Serial Nr.</th>
-                    <th id="inventoryNumberHead">Inventory Nr.</th>
-                    <th id="prototypeIdHead">Prototype ID</th>   
-                </span>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of items">
-                <span class="items">
-                    <td id="inventoryIdData">{{item.inventoryId}}</td>
-                    <td id="deviceTypeData">{{item.deviceType}}</td>
-                    <td id="MLFBData">{{item.mlfb}}</td>
-                    <td id="serialNumberData">{{item.serialNumber}}</td>
-                    <td id="inventoryNumberData">{{item.inventoryNumber}}</td>
-                    <td id="prototypeIdData">{{item.prototypeId}}</td>
-                </span>
-            </tr>
-        </tbody>
-    </table>
+<div id="table-container">
+    <div id="table-header-container">
+        <div id="table-header-invID" class="table-header">Inventory ID</div>
+        <div class="table-header">Device Type</div>
+        <div class="table-header">MLFB</div>
+        <div class="table-header">Serial Nr.</div>
+        <div class="table-header">Inventory Nr.</div>
+        <div class="table-header">Prototype ID</div>
+    </div>
+    <div id="table-item-container" *ngFor="let item of items">
+        <div id="table-item-invID" class="table-items">{{item.inventoryId}}</div>
+        <div id="table-item-dt" class="table-items">{{item.deviceType}}</div>
+        <div id="table-item-mlfb" class="table-items">{{item.mlfb}}</div>
+        <div id="table-item-sn" class="table-items">{{item.serialNumber}}</div>
+        <div id="table-item-in" class="table-items">{{item.inventoryNumber}}</div>
+        <div id="table-item-protID" class="table-items">{{item.prototypeId}}</div>
+    </div>
 </div>
