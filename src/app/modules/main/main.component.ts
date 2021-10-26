@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DeviceInput } from 'src/shared/device-input';
 
 import { ModalService } from 'src/app/modules/_modal';
@@ -12,8 +12,6 @@ import { ModalService } from 'src/app/modules/_modal';
 export class MainComponent implements OnInit {
   inputs: DeviceInput[] = [];
 
-  //@Output() populatedInputs = new EventEmitter<DeviceInput[]>();
-
   constructor(private modalService: ModalService) { }
 
   ngOnInit(): void {
@@ -25,7 +23,6 @@ export class MainComponent implements OnInit {
     
     this.inputs.push(item);
 
-    //this.populatedInputs.emit(this.inputs);
     console.log(JSON.stringify(this.inputs));
   }
 
@@ -38,9 +35,11 @@ export class MainComponent implements OnInit {
   }
 
   generateIds(): void {
-    let number = this.inputs.length;
-    for (let index = 123456; index < number; index++) {
-      this.inputs[index].inventoryId = index.toString();
+    let baseID = 500;
+    let addedRows = this.inputs.length;
+
+    for (let index = 0; index < addedRows; index++) {
+      this.inputs[index].inventoryId = (index + baseID).toString();
     }
   }
 }

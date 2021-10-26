@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ModalModule } from './modules/_modal';
 import { ExportsComponent } from './modules/exports/exports.component';
 import { TooltipComponent } from './modules/tooltip/tooltip.component';
+import { DeleteEntryComponent } from './modules/delete-entry/delete-entry.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TooltipComponent } from './modules/tooltip/tooltip.component';
     InputComponent,
     TableComponent,
     ExportsComponent,
-    TooltipComponent
+    TooltipComponent,
+    DeleteEntryComponent
   ],
   imports: [
     BrowserModule,

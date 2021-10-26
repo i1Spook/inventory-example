@@ -1,18 +1,23 @@
 <div id="table-container">
     <div id="table-header-container">
         <div id="table-header-invID" class="table-header">Inventory ID</div>
-        <div class="table-header">Device Type</div>
-        <div class="table-header">MLFB</div>
-        <div class="table-header">Serial Nr.</div>
-        <div class="table-header">Inventory Nr.</div>
-        <div class="table-header">Prototype ID</div>
+        <div id="table-header-dt" class="table-header">Device Type</div>
+        <div id="table-header-mlfb" class="table-header">MLFB</div>
+        <div id="table-header-sn" class="table-header">Serial Nr.</div>
+        <div id="table-header-in" class="table-header">Inventory Nr.</div>
+        <div id="table-header-protID" class="table-header">Prototype ID</div>
     </div>
-    <div id="table-item-container" *ngFor="let item of items">
-        <div id="table-item-invID" class="table-items">{{item.inventoryId}}</div>
-        <div id="table-item-dt" class="table-items">{{item.deviceType}}</div>
-        <div id="table-item-mlfb" class="table-items">{{item.mlfb}}</div>
-        <div id="table-item-sn" class="table-items">{{item.serialNumber}}</div>
-        <div id="table-item-in" class="table-items">{{item.inventoryNumber}}</div>
-        <div id="table-item-protID" class="table-items">{{item.prototypeId}}</div>
-    </div>
+    <div id="table-items-container">
+        <div id="table-item-container" *ngFor="let item of items">
+            <div id="table-item-invID" class="table-items">{{item.inventoryId}}</div>
+            <div id="table-item-dt" class="table-items">{{item.deviceType}}</div>
+            <div id="table-item-mlfb" class="table-items">{{item.mlfb}}</div>
+            <div id="table-item-sn" class="table-items">{{item.serialNumber}}</div>
+            <div id="table-item-in" class="table-items">{{item.inventoryNumber}}</div>
+            <div id="table-item-protID" class="table-items">{{item.prototypeId}}</div>
+            <div id="table-item-delete" class="table-items">
+                <app-delete-entry [populatedInputs]="items"></app-delete-entry>
+            </div>
+        </div>
+    </div>    
 </div>
