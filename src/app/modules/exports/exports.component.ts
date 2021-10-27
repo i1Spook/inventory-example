@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import * as FileSaver from 'file-saver';
 import { DeviceInput } from 'src/shared/device-input';
+import { ModalService } from 'src/app/modules/_modal';
 
 @Component({
   selector: 'app-exports',
@@ -11,12 +12,11 @@ export class ExportsComponent implements OnInit {
 
   @Input() populatedInputs?: DeviceInput[];
 
-  constructor() { }
+  constructor(private modalService: ModalService) { }
 
   ngOnInit(): void {
   }
 
-  // angular populatedInputs.length anzeigen -> make (?) work -> -scss Doku lesen (difference zu .less) -> angular modal popup nachsehen
   exportAsJson(): void{
     console.log(this.populatedInputs);
     
@@ -27,12 +27,15 @@ export class ExportsComponent implements OnInit {
     console.log(blob);
 
     FileSaver.saveAs(blob, "InventoryList");
-
     console.log("Exported as JSON!");
   }
 
   exportAsCsv(): void{
     // Add export logic
     console.log("Exported as CSV!");
+  }
+
+  closeExportPopUp(id: string): void {
+    this.modalService.close(id);
   }
 }

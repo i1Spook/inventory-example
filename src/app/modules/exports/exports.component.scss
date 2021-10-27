@@ -6,3 +6,34 @@ button{
     margin-left: 5px;
     border-radius: 5px;
 }
+
+#export-header{
+    height: 1em;
+    margin: 0% 2.5%;
+    padding: 0.3em;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#export-size{
+    margin: 0% 2.5%;
+    padding: 1em;
+    font-weight: bold;
+}
+
+#export-button-container{
+    text-align: right;
+    padding: 1%;
+    margin: 0% 1%;
+}
+
+#export-content-container{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#closeExportPopUp{
+    margin: 0;
+    float: left;
+}

@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DeviceInput } from 'src/shared/device-input';
-
 import { ModalService } from 'src/app/modules/_modal';
 
 @Component({
@@ -12,26 +11,23 @@ import { ModalService } from 'src/app/modules/_modal';
 export class MainComponent implements OnInit {
   inputs: DeviceInput[] = [];
 
+  generateButtonDisplayMain: string = "display: none;";
+  exportButtonDisplayMain: string = "display: none;";
+
   constructor(private modalService: ModalService) { }
 
+  // make (?) work
   ngOnInit(): void {
   }
 
   addItem(item: DeviceInput): void {
-    console.log("Added item:");
-    console.table(item);
-    
+    console.table("Added item: " + item);
     this.inputs.push(item);
+    console.log("Entire Array: " + JSON.stringify(this.inputs));
 
-    console.log(JSON.stringify(this.inputs));
-  }
-
-  openExportPopUp(id: string): void {
-    this.modalService.open(id);
-  }
-
-  closeExportPopUp(id: string): void {
-    this.modalService.close(id);
+    if (this.inputs.length > 0) {
+      this.generateButtonDisplayMain = "display: inline-block;";
+    }
   }
 
   generateIds(): void {
@@ -41,6 +37,14 @@ export class MainComponent implements OnInit {
     for (let index = 0; index < addedRows; index++) {
       this.inputs[index].inventoryId = (index + baseID).toString();
     }
+
+    if (this.inputs.length > 0) {
+      this.exportButtonDisplayMain = "display: inline-block;";
+    }
+  }
+
+  openExportPopUp(id: string): void {
+    this.modalService.open(id);
   }
 }
 

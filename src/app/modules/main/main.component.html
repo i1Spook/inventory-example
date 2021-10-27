@@ -5,13 +5,12 @@
     <app-table [items]="inputs"></app-table>
 
     <div id="bottom-button-container">
-        <button class="bottom-buttons" (click)="generateIds()">Generate IDs</button>
-        <button class="bottom-buttons" (click)="openExportPopUp('export-modal')">Export...</button>
+        <button [style]="generateButtonDisplayMain" id="generate-button" class="bottom-buttons" (click)="generateIds()">Generate IDs</button>
+        <button [style]="exportButtonDisplayMain" id="openExport-button" class="bottom-buttons" (click)="openExportPopUp('export-modal')">Export...</button>
     </div>
 
     <jw-modal id="export-modal">
         <app-exports [populatedInputs]="inputs"></app-exports>
-        <button class="closeExportPopUp" (click)="closeExportPopUp('export-modal')">Close</button>
     </jw-modal>
     
     <hr class="linebreak" id="bottom-linebreak"/>

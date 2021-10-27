@@ -21,7 +21,7 @@ import { DeleteEntryComponent } from './modules/delete-entry/delete-entry.compon
     TableComponent,
     ExportsComponent,
     TooltipComponent,
-    DeleteEntryComponent
+    DeleteEntryComponent,
   ],
   imports: [
     BrowserModule,

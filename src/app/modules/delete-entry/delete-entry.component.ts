@@ -10,14 +10,13 @@ export class DeleteEntryComponent implements OnInit {
 
   @Input() populatedInputs?: DeviceInput[];
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
 
-  deleteEntry() : void{
-    // Add delete logic
-    
-    // this.populatedInputs[toBeDeleted]
+  deleteFirstEntry() : void {
+    this.populatedInputs?.splice(0, 1);
   }
 }
