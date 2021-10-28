@@ -2,11 +2,13 @@
     <div id="page-title">Inventory Monitor</div>
     <hr class="linebreak" id="top-linebreak"/>
     <app-input (itemValid)="addItem($event)"></app-input>
-    <app-table [items]="inputs"></app-table>
+    <app-table (deleteEntryRequest)="deleteItem($event)" [items]="inputs"></app-table>
 
     <div id="bottom-button-container">
-        <button [style]="generateButtonDisplayMain" id="generate-button" class="bottom-buttons" (click)="generateIds()">Generate IDs</button>
-        <button [style]="exportButtonDisplayMain" id="openExport-button" class="bottom-buttons" (click)="openExportPopUp('export-modal')">Export...</button>
+        <div *ngIf="this.amountItems > 0">
+            <button id="generate-button" class="bottom-buttons" (click)="generateIds()">Generate IDs</button>
+            <button *ngIf="this.amountItems > 0 && this.generatePressed" id="openExport-button" class="bottom-buttons" (click)="openExportPopUp('export-modal')">Export...</button>
+        </div>
     </div>
 
     <jw-modal id="export-modal">

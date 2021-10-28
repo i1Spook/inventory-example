@@ -59,3 +59,10 @@
 #table-item-sn, #table-item-in, #table-header-sn, #table-header-in{
     width: 15%;
 }
+
+.table-item-delete-button{
+    min-width: 1.5em;
+    min-height: 1.5em;
+    display: grid;
+    background-color: #ff000036;
+}

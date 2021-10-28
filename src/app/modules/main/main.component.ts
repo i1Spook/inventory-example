@@ -11,8 +11,8 @@ import { ModalService } from 'src/app/modules/_modal';
 export class MainComponent implements OnInit {
   inputs: DeviceInput[] = [];
 
-  generateButtonDisplayMain: string = "display: none;";
-  exportButtonDisplayMain: string = "display: none;";
+  amountItems: number = 0;
+  generatePressed: boolean = false;
 
   constructor(private modalService: ModalService) { }
 
@@ -23,24 +23,28 @@ export class MainComponent implements OnInit {
   addItem(item: DeviceInput): void {
     console.table("Added item: " + item);
     this.inputs.push(item);
+    this.amountItems = this.inputs.length;
     console.log("Entire Array: " + JSON.stringify(this.inputs));
+  }
 
-    if (this.inputs.length > 0) {
-      this.generateButtonDisplayMain = "display: inline-block;";
+  deleteItem(itemIndex: number) {
+    this.inputs.splice(itemIndex, 1);
+    this.amountItems = this.inputs.length;
+
+    if (this.amountItems == 0) {
+      this.generatePressed = false; 
     }
   }
 
   generateIds(): void {
     let baseID = 500;
-    let addedRows = this.inputs.length;
+    this.amountItems = this.inputs.length;
 
-    for (let index = 0; index < addedRows; index++) {
+    for (let index = 0; index < this.amountItems; index++) {
       this.inputs[index].inventoryId = (index + baseID).toString();
     }
 
-    if (this.inputs.length > 0) {
-      this.exportButtonDisplayMain = "display: inline-block;";
-    }
+    this.generatePressed = true;
   }
 
   openExportPopUp(id: string): void {
