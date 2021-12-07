@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import * as FileSaver from 'file-saver';
 import { DeviceInput } from 'src/shared/device-input';
 import { ModalService } from 'src/app/modules/_modal';
+import { MainComponent } from '../main/main.component';
 
 @Component({
   selector: 'app-exports',
@@ -12,7 +13,7 @@ export class ExportsComponent implements OnInit {
 
   @Input() populatedInputs?: DeviceInput[];
 
-  constructor(private modalService: ModalService) { }
+  constructor(private modalService: ModalService, private mainComponent: MainComponent) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +29,9 @@ export class ExportsComponent implements OnInit {
 
     FileSaver.saveAs(blob, "InventoryList");
     console.log("Exported as JSON!");
+
+    //delete current List
+    this.mainComponent.deleteAllItems();
   }
 
   exportAsCsv(): void{

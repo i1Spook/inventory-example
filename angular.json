@@ -36,6 +36,10 @@
             "styles": [
               "src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 08df1db8ccde06aac94b3a37d7141b902cf5cdee
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",

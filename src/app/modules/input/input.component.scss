@@ -227,9 +227,32 @@ select{
 }
 
 .modal-footer {
+<<<<<<< HEAD
     right: 0;
+=======
+    right:0;
+>>>>>>> 08df1db8ccde06aac94b3a37d7141b902cf5cdee
 }
 
 .fade:not(.show){
     opacity: 1;
+<<<<<<< HEAD
+=======
+}
+
+.seperator{
+    display:block;
+    height: 25px;
+}
+
+.image-container {
+    width: 300px;
+    height: 120px;
+}
+
+/* Resize images */
+.image-container img {
+    width: 100%;
+    height: auto;
+>>>>>>> 08df1db8ccde06aac94b3a37d7141b902cf5cdee
 }

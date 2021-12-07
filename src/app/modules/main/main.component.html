@@ -6,7 +6,7 @@
 
     <div id="bottom-button-container">
         <div *ngIf="this.amountItems > 0">
-            <button id="generate-button" class="bottom-buttons" (click)="generateIds()">Generate IDs</button>
+            <button *ngIf="!this.generatePressed" id="generate-button" class="bottom-buttons" (click)="generateIds()">Generate IDs</button>
             <button *ngIf="this.amountItems > 0 && this.generatePressed" id="openExport-button" class="bottom-buttons" (click)="openExportPopUp('export-modal')">Export...</button>
         </div>
     </div>
