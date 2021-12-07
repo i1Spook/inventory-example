@@ -1,5 +1,26 @@
+<!-- https://www.codeply.com/p/FUyz71tMiO  //  https://codepen.io/bootpen/pen/jbbaRa -->
+<!--data-backdrop="false" disables background opacity change-->
+
 <div class="help-tip-container">
-    <p>
-        <ng-content></ng-content>
-    </p>
+    <button type="button" class="help-tip btn-demo" data-toggle="modal" data-target="#infoModal" data-backdrop="false">
+        <div class="modal left fade" id="infoModal" tabindex="" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="nav flex-sm-column flex-row">
+                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-text">
+                            <ng-content></ng-content>
+                        </div>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </button>
 </div>

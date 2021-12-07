@@ -4,10 +4,35 @@
   </div>
 
   <div class="input-container">
-    <app-tooltip>
-      Please select the type of your device. Lorem ipsum dolor bla bla bla Please select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla blaPlease select the type of your device. Lorem ipsum dolor bla bla bla
-    </app-tooltip>
     <label class="input-label" for="deviceType">Device Type</label>
+    <!-- <app-tooltip>
+      The Device Type can be found lorem ipsum dolor!
+    </app-tooltip> -->
+
+    <div class="help-tip-container">
+      <button type="button" class="help-tip btn-demo" data-toggle="modal" data-target="#deviceModal" data-backdrop="false">
+          <div class="modal left fade" id="deviceModal" tabindex="" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <div class="nav flex-sm-column flex-row">
+                              <a href="index.html" class="nav-item nav-link active">Home</a>
+                          </div>
+                      </div>
+                      <div class="modal-body">
+                          <div class="modal-text">
+                            The Device Type can be found lorem ipsum dolo.
+                          </div>  
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </button>
+    </div>
+
     <select id="deviceType" [(ngModel)]="input.deviceType" placeholder="Device Type">
       <option selected value="">Choose Device Type</option>
       <option value="PC">PC</option>
@@ -16,31 +41,128 @@
     </select>
   </div>
   <div class="input-container">
-    <app-tooltip>
-      Please enter 32-digit MLFB.
-    </app-tooltip>
     <label class="input-label" for="mlfb">MLFB</label>
+    <!-- <app-tooltip>
+      The MLFB can be found lorem ipsum dolor!
+    </app-tooltip> -->
+
+    <div class="help-tip-container">
+      <button type="button" class="help-tip btn-demo" data-toggle="modal" data-target="#mlfbModal" data-backdrop="false">
+          <div class="modal left fade" id="mlfbModal" tabindex="" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <div class="nav flex-sm-column flex-row">
+                              <a href="index.html" class="nav-item nav-link active">Home</a>
+                          </div>
+                      </div>
+                      <div class="modal-body">
+                          <div class="modal-text">
+                              The MLFB can be found lorem ipsum.
+                          </div>  
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </button>
+    </div>
+
     <input id="mlfb" [(ngModel)]="input.mlfb" placeholder="MLFB">
   </div>
   <div class="input-container">
-    <app-tooltip>
-      Please enter 16-digit Serial Number.
-    </app-tooltip>
     <label class="input-label" for="serialNmbr">Serial Number</label>
+    <!-- <app-tooltip>
+    </app-tooltip> -->
+
+    <div class="help-tip-container">
+      <button type="button" class="help-tip btn-demo" data-toggle="modal" data-target="#serialModal" data-backdrop="false">
+          <div class="modal left fade" id="serialModal" tabindex="" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <div class="nav flex-sm-column flex-row">
+                              <a href="index.html" class="nav-item nav-link active">Home</a>
+                          </div>
+                      </div>
+                      <div class="modal-body">
+                          <div class="modal-text">
+                              The Serial Number can be found lorem ipsum.
+                          </div>  
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </button>
+    </div>
+
     <input id="serialNmbr" [(ngModel)]="input.serialNumber" placeholder="Serial Number">
   </div>
   <div class="input-container">
-    <app-tooltip>
-      Please enter 12-digit Inventory Number (optional).
-    </app-tooltip>
     <label class="input-label" for="inventoryNmbr">Inventory Number</label>
+    <!-- <app-tooltip>
+    </app-tooltip> -->
+
+    <div class="help-tip-container">
+      <button type="button" class="help-tip btn-demo" data-toggle="modal" data-target="#inventoryModal" data-backdrop="false">
+          <div class="modal left fade" id="inventoryModal" tabindex="" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <div class="nav flex-sm-column flex-row">
+                              <a href="index.html" class="nav-item nav-link active">Home</a>
+                          </div>
+                      </div>
+                      <div class="modal-body">
+                          <div class="modal-text">
+                              The Inventory Number can be found lorem ipsum.
+                          </div>  
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </button>
+    </div>
+
     <input id="inventoryNmbr" [(ngModel)]="input.inventoryNumber" placeholder="Inventory Number (optional)">
   </div>
   <div class="input-container">
-    <app-tooltip>
-      Please enter 10-digit Prototype ID (optional).
-    </app-tooltip>
     <label class="input-label" for="prototypeId">Prototype ID</label>
+    <!-- <app-tooltip>
+    </app-tooltip> -->
+
+    <div class="help-tip-container">
+      <button type="button" class="help-tip btn-demo" data-toggle="modal" data-target="#protoModal" data-backdrop="false">
+          <div class="modal left fade" id="protoModal" tabindex="" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <div class="nav flex-sm-column flex-row">
+                              <a href="index.html" class="nav-item nav-link active">Home</a>
+                          </div>
+                      </div>
+                      <div class="modal-body">
+                          <div class="modal-text">
+                              The Prototype ID can be found lorem ipsum.
+                          </div>  
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </button>
+    </div>
+
     <input id="prototypeId" [(ngModel)]="input.prototypeId" placeholder="Prototype ID (optional)">
   </div>
 
