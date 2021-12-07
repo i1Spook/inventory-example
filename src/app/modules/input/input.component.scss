@@ -227,5 +227,9 @@ select{
 }
 
 .modal-footer {
-    
+    right: 0;
+}
+
+.fade:not(.show){
+    opacity: 1;
 }
