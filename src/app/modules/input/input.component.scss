@@ -227,5 +227,25 @@ select{
 }
 
 .modal-footer {
-    
+    right:0;
+}
+
+.fade:not(.show){
+    opacity: 1;
+}
+
+.seperator{
+    display:block;
+    height: 25px;
+}
+
+.image-container {
+    width: 300px;
+    height: 120px;
+}
+
+/* Resize images */
+.image-container img {
+    width: 100%;
+    height: auto;
 }

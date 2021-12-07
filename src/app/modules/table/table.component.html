@@ -1,6 +1,6 @@
 <div id="table-container">
     <div id="table-header-container">
-        <div id="table-header-invID" class="table-header">Inventory ID</div>
+        <div id="table-header-DPMID" class="table-header">DPM ID</div>
         <div id="table-header-dt" class="table-header">Device Type</div>
         <div id="table-header-mlfb" class="table-header">MLFB</div>
         <div id="table-header-sn" class="table-header">Serial Nr.</div>
@@ -9,7 +9,7 @@
     </div>
     <div id="table-items-container">
         <div id="table-item-container" *ngFor="let item of items; let i = index;">
-            <div id="table-item-invID" class="table-items">{{item.inventoryId}}</div>
+            <div id="table-item-DPMID" class="table-items">{{item.DPMId}}</div>
             <div id="table-item-dt" class="table-items">{{item.deviceType}}</div>
             <div id="table-item-mlfb" class="table-items">{{item.mlfb}}</div>
             <div id="table-item-sn" class="table-items">{{item.serialNumber}}</div>

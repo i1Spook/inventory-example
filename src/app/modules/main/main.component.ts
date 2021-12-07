@@ -16,7 +16,6 @@ export class MainComponent implements OnInit {
 
   constructor(private modalService: ModalService) { }
 
-  // make (?) work
   ngOnInit(): void {
   }
 
@@ -25,6 +24,7 @@ export class MainComponent implements OnInit {
     this.inputs.push(item);
     this.amountItems = this.inputs.length;
     console.log("Entire Array: " + JSON.stringify(this.inputs));
+    this.generatePressed = false;
   }
 
   deleteItem(itemIndex: number) {
@@ -36,12 +36,18 @@ export class MainComponent implements OnInit {
     }
   }
 
+  deleteAllItems(){
+    for (let index = 0; index < this.inputs.length; index=index) {
+      this.deleteItem(index);
+    }
+  }
+
   generateIds(): void {
     let baseID = 500;
     this.amountItems = this.inputs.length;
 
     for (let index = 0; index < this.amountItems; index++) {
-      this.inputs[index].inventoryId = (index + baseID).toString();
+      this.inputs[index].DPMId = (index + baseID).toString();
     }
 
     this.generatePressed = true;

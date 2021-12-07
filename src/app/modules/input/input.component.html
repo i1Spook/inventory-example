@@ -58,7 +58,17 @@
                       </div>
                       <div class="modal-body">
                           <div class="modal-text">
-                              The MLFB can be found lorem ipsum.
+                            Die MLFB umfasst mindestens zwei Blöcke (12 Stellen) - maximal drei Blöcke (16 Stellen).
+                            <div class="seperator"></div>
+                            Bis Mai 2000 wurden auch MLFB 6- bis 11-stellig vergeben. Diese können heute auch noch gültig sein.            
+                            <div class="seperator"></div>
+                            Das Leerzeichen in Block 1 kann zur Lesbarkeit in Text hinzugeführt werden wird Maschinell nicht verarbeitet.
+                            <div class="seperator"></div>
+                            Die MLFB findet sich auf den Typenschildern oder auf den Seiten der Geräte aufgedruckt. 
+                            <div class="seperator"></div>
+                            <div class="image-container">
+                                <img src="assets/mlfb.jpg" alt="MLFB Tutorial">
+                            </div>
                           </div>  
                       </div>
                       <div class="modal-footer">
@@ -89,7 +99,14 @@
                       </div>
                       <div class="modal-body">
                           <div class="modal-text">
-                              The Serial Number can be found lorem ipsum.
+                            Die Seriennummer findet sich auf den Typenschildern oder auf den Seiten der Geräte aufgedruckt. 
+                            Jedes Siemens gerät besitzt eine Seriennummer mit dem gleichen Aufbau. 
+                            <div class="seperator"></div>
+                            Die Seriennummer beginnt immer mit S und dann aus einer 9-stelligen Großbuchstaben/Zahlen Kombi.
+                            <div class="seperator"></div>
+                            <div class="image-container">
+                                <img src="assets/serialnumber.jpg" alt="MLFB Tutorial">
+                            </div>
                           </div>  
                       </div>
                       <div class="modal-footer">
@@ -120,7 +137,13 @@
                       </div>
                       <div class="modal-body">
                           <div class="modal-text">
-                              The Inventory Number can be found lorem ipsum.
+                            Sie findet sich nur auf Geräten, die in der Anschaffung mehr, wie 800€ kosten. Sie findet sich NICHT auf allen Geräten.  
+                            <div class="seperator"></div>
+                            Bei Geräten ohne Inventarnummer wird das Feld übersprungen.
+                            <div class="seperator"></div>
+                            <div class="image-container">
+                                <img src="assets/inventory.jpg" alt="MLFB Tutorial">
+                            </div>
                           </div>  
                       </div>
                       <div class="modal-footer">
@@ -151,7 +174,13 @@
                       </div>
                       <div class="modal-body">
                           <div class="modal-text">
-                              The Prototype ID can be found lorem ipsum.
+                            Die Prototypen-ID wird für Vorseriengeräte vergeben. 
+                            <div class="seperator"></div>
+                            Nicht jedes Gerät besitzt eine Prototypen ID. Geräte, die eine MLFB oder Seriennummer haben sind Seriengeräte und haben keine Prototypen ID.
+                            
+                            Wenn kein Prototyp vorliegt, wird das Feld übersprungen.
+                            <div class="seperator"></div>          
+                            Meist handschriftlich auf dem Gerät.
                           </div>  
                       </div>
                       <div class="modal-footer">
@@ -167,6 +196,6 @@
   </div>
 
   <div id="add-button-container">
-    <button id="add-button" (click)="buttonFunc()">Add</button>
+    <button id="add-button" (click)="buttonAdd()">Add</button>
   </div>
 </div>
