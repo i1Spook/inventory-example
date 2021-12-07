@@ -11,7 +11,9 @@ import { FormsModule } from '@angular/forms';
 import { ModalModule } from './modules/_modal';
 import { ExportsComponent } from './modules/exports/exports.component';
 import { TooltipComponent } from './modules/tooltip/tooltip.component';
-import { DeleteEntryComponent } from './modules/delete-entry/delete-entry.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import { DeleteEntryComponent } from './modules/delete-entry/delete-entry.compon
     TableComponent,
     ExportsComponent,
     TooltipComponent,
-    DeleteEntryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ModalModule
+    ModalModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

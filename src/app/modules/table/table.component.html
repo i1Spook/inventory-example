@@ -8,7 +8,7 @@
         <div id="table-header-protID" class="table-header">Prototype ID</div>
     </div>
     <div id="table-items-container">
-        <div id="table-item-container" *ngFor="let item of items">
+        <div id="table-item-container" *ngFor="let item of items; let i = index;">
             <div id="table-item-invID" class="table-items">{{item.inventoryId}}</div>
             <div id="table-item-dt" class="table-items">{{item.deviceType}}</div>
             <div id="table-item-mlfb" class="table-items">{{item.mlfb}}</div>
@@ -16,7 +16,7 @@
             <div id="table-item-in" class="table-items">{{item.inventoryNumber}}</div>
             <div id="table-item-protID" class="table-items">{{item.prototypeId}}</div>
             <div id="table-item-delete" class="table-items">
-                <app-delete-entry [populatedInputs]="items"></app-delete-entry>
+                <button id="delete-button-{{i}}" (click)="deleteEntry(i)" class="table-item-delete-button">x</button>
             </div>
         </div>
     </div>    

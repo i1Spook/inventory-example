@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DeviceInput } from 'src/shared/device-input';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-input',
@@ -9,13 +10,30 @@ import { DeviceInput } from 'src/shared/device-input';
 export class InputComponent implements OnInit {
   input: DeviceInput;
 
+  added: boolean = false;
+
+  message: string = "Added item";
+  action: string = "OK";
+
   @Output() itemValid = new EventEmitter<DeviceInput>();
 
-  constructor() {
+  constructor(private _snackBar: MatSnackBar) {
     this.input = new DeviceInput();
   }
 
   ngOnInit(): void {
+  }
+
+  buttonFunc() {
+    this.validateItem();
+    if (this.added) {
+      this.openSnackBar();
+      this.added = false;
+    }
+  }
+
+  openSnackBar() {
+    this._snackBar.open(this.message, this.action);
   }
 
   validateItem(): void {
@@ -38,6 +56,7 @@ export class InputComponent implements OnInit {
       console.log("Item valid");
       this.itemValid.emit(this.input);
       this.input = new DeviceInput();
+      this.added = true;
     } else {
       console.log("Item invalid");
     }
