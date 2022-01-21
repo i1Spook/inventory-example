@@ -3,7 +3,7 @@
     <div id="export-size">Your export contains {{this.populatedInputs?.length}} item(s).</div>
     <div id="export-button-container">
         <button id="closeExportPopUp" (click)="closeExportPopUp('export-modal')">Close</button>
-        <button (click)="exportAsCsv()" (click)="closeExportPopUp('export-modal')" >CSV</button>
-        <button (click)="exportAsJson()" (click)="closeExportPopUp('export-modal')">JSON</button>
+        <button id="csv-btn" (click)="exportAsCsv()" (click)="closeExportPopUp('export-modal')" >CSV</button>
+        <button id="json-btn" (click)="exportAsJson()" (click)="closeExportPopUp('export-modal')">JSON</button>
     </div>
 </div>

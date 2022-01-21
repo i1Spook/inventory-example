@@ -10,11 +10,44 @@
     min-height: 59em;
 }
 
-#page-title{
-    margin: 1% 5.5%;
+#page-header{
+    margin: 0.5% 5.5%;
     padding: 0.3em;
+}
+
+#title{
     font-size: 2.5em;
 }
+
+#view-nav{
+    display: flex;
+    margin-left: 1%;
+}
+
+#view-add-btn, #view-search-btn{
+    margin-left: 0%;
+    min-width: 6em;
+    min-height: 1em;
+    height: 2em;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#view-add-btn, #view-search-btn{
+    color: black;
+}
+
+#view-add-btn:active, #view-search-btn:active{
+    color:orange;
+}
+
+.vertical{
+    border-left: 2px solid black;
+    height: 30px;
+    margin: 0%;
+    padding: 0%;
+}
+
 
 .linebreak {
     display: block;
@@ -34,4 +67,8 @@
 .bottom-buttons{
     width: 12em;
     margin-right: 1%;
+}
+
+.bottom-buttons:active{
+    color:orange;
 }

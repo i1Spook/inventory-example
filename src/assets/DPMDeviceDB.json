@@ -1,0 +1,55 @@
+[
+  {
+    "DPMId": "500",
+    "deviceType": "PLC",
+    "mlfb": "6ES7516-3AN01-0AB0",
+    "inventoryNumber": "2222222222",
+    "prototypeId": "123 123",
+    "serialNumber": "S C-K6SE98322016"
+  },
+
+  {
+    "DPMId": "501",
+    "deviceType": "PC",
+    "mlfb": "6ES7516-3AN01-0AB0",
+    "inventoryNumber": "3333333333",
+    "prototypeId": "123 123",
+    "serialNumber": "S C-K6SE98322016"
+  },
+
+  {
+    "DPMId": "502",
+    "deviceType": "HMI",
+    "mlfb": "6ES7516-3AN01-0AB0",
+    "inventoryNumber": "9999999999",
+    "prototypeId": "123 123",
+    "serialNumber": "S C-K6SE98322016"
+  },
+
+  {
+    "DPMId": "503",
+    "deviceType": "HMI",
+    "mlfb": "6ES7516-3AN01-0AB0",
+    "inventoryNumber": "8888888888",
+    "prototypeId": "123 123",
+    "serialNumber": "S C-K6SE98322016"
+  },
+
+  {
+    "DPMId": "504",
+    "deviceType": "PLC",
+    "mlfb": "6ES7516-3AN01-0AB0",
+    "inventoryNumber": "7777777777",
+    "prototypeId": "123 123",
+    "serialNumber": "S C-K6SE98322016"
+  },
+
+  {
+    "DPMId": "505",
+    "deviceType": "PC",
+    "mlfb": "6ES7516-3AN01-0AB0",
+    "inventoryNumber": "1111111111",
+    "prototypeId": "123 123",
+    "serialNumber": "S C-K6SE98322016"
+  }
+]

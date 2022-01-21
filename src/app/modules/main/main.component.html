@@ -1,16 +1,32 @@
 <div id="main-page">
-    <div id="page-title">Inventory Monitor</div>
+    <div id="page-header">
+        <div id="title">Inventory Monitor</div>
+        <div id="view-nav">
+            <button id="view-add-btn" (click)="switchViewToAdd()" [ngStyle]="{'color': this.showAdd ? 'black' : 'lightgrey'}">Add Devices</button>
+            <div class="vertical"></div>
+            <button id="view-search-btn" (click)="switchViewToSearch()" [ngStyle]="{'color': this.showSearch ? 'black' : 'lightgrey'}">Search Devices</button>
+        </div>
+    </div>
     <hr class="linebreak" id="top-linebreak"/>
-    <app-input (itemValid)="addItem($event)"></app-input>
-    <app-table (deleteEntryRequest)="deleteItem($event)" [items]="inputs"></app-table>
+    <app-input *ngIf="this.showAdd" (itemValid)="addItem($event)"></app-input>
+    <app-table *ngIf="this.showAdd" (deleteEntryRequest)="deleteItem($event)" [items]="inputs"></app-table>
 
-    <div id="bottom-button-container">
+    <app-search *ngIf="this.showSearch"></app-search>
+    <app-table2 *ngIf="this.showSearch"></app-table2>
+
+    <div *ngIf="this.showAdd" id="bottom-button-container">
         <div *ngIf="this.amountItems > 0">
             <button *ngIf="!this.generatePressed" id="generate-button" class="bottom-buttons" (click)="generateIds()">Generate IDs</button>
             <button *ngIf="this.amountItems > 0 && this.generatePressed" id="openExport-button" class="bottom-buttons" (click)="openExportPopUp('export-modal')">Export...</button>
         </div>
     </div>
 
+    <div *ngIf="this.showSearch" id="bottom-button-container">
+        <div>
+            <button id="openExport-button" class="bottom-buttons" (click)="openExportPopUp('export-modal')">Export...</button>
+        </div>
+    </div>
+    
     <jw-modal id="export-modal">
         <app-exports [populatedInputs]="inputs"></app-exports>
     </jw-modal>

@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DeviceInput } from 'src/shared/device-input';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-input',
@@ -9,15 +8,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class InputComponent implements OnInit {
   input: DeviceInput;
-
   added: boolean = false;
-
-  message: string = "Added item";
-  action: string = "OK";
 
   @Output() itemValid = new EventEmitter<DeviceInput>();
 
-  constructor(private _snackBar: MatSnackBar) {
+  constructor() {
     this.input = new DeviceInput();
   }
 
@@ -27,14 +22,9 @@ export class InputComponent implements OnInit {
   buttonAdd() {
     this.validateItem();
     if (this.added) {
-      //this.openSnackBar();
       this.added = false;
     }
   }
-
-  // openSnackBar() {
-  //   this._snackBar.open(this.message, this.action);
-  // }
 
   validateItem(): void {
     console.log("Check validity")
@@ -42,9 +32,10 @@ export class InputComponent implements OnInit {
     /* Input check: 
         Mandatory fields (Device Type, MLFB, SerialNumber) must be filled AND have appropriate length
         Optional fields (InventoryNumber, PrototypeID) must be empty OR have appropriate length
+        Can only contain numbers, letters and dashes
     */
     let validMLFBMinLength = 6;
-    let validMLFBMaxLength = 18; //16 characters and 2 -
+    let validMLFBMaxLength = 18; //16 characters and 2 "-"
     let validSNLength = 16; //S C-K6SE98322016
     let validINLength = 10;
     let validPTIDLength = 7;

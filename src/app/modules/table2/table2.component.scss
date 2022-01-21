@@ -1,0 +1,110 @@
+#table-container, #table-items-container{
+    background-color: rgb(240, 240, 245);
+    min-height: 35em;
+    max-height: 40em;
+    width: 100%;
+    min-width: 70em;
+    margin: 1em 0em;
+}
+
+#table-items-container{
+    height: 34em;
+    margin: 0em 0em 1em 0em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#table-header-container{
+    display: flex;
+    flex-direction: row;
+    gap: 31.5px;
+    text-align: center;
+    margin: 0.5%;
+    padding: 0.625em 0.3125em;
+}
+
+.table-header{
+    display: flex;
+    justify-content: end;
+    width: 50%;
+    margin: 0.3125em 0.5%;
+    padding: 0.3125em 0.625em;
+}
+
+#table-header-DPMID{
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+#table-header-dt{
+    width: 50%;
+}
+
+#table-header-mlfb{
+    width: 28%;
+}
+
+#table-header-sn{
+    width: 41%;
+}
+
+#table-header-in{
+    width: 54%;
+}
+
+#table-header-protID{
+    width: 53%;
+}
+
+.push-mlfb{
+    margin-left: 144px;
+}
+
+.push-sn{
+    margin-left: 156.5px;
+}
+
+.push-in{
+    margin-left: 66px;
+}
+
+.push-protID{
+    margin-left: 33.5px;
+}
+
+.single-header-container{
+    display: flex;
+    flex-direction: row;
+    width: 10%;
+}
+
+#single-header-container-DPMID{
+    margin-left: 40.5px;
+}
+
+.sort-arrows-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: -2px;
+    width: 15%;
+}
+
+.up-arrow-btn, .down-arrow-btn{
+    background: transparent;
+    border: none;
+    outline: none;
+    height: 20px;
+    width: 25px;
+    min-height: 0px;
+    min-width: 0px;
+}
+
+ .down-arrow{
+    margin-bottom: 8px;
+ }
+
+ .up-arrow{
+    margin-top: 8px;
+ }

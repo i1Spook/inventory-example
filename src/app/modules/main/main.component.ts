@@ -1,6 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DeviceInput } from 'src/shared/device-input';
 import { ModalService } from 'src/app/modules/_modal';
+import { DBInput } from 'src/shared/DBInput';
+
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -9,12 +14,21 @@ import { ModalService } from 'src/app/modules/_modal';
   encapsulation: ViewEncapsulation.None,
 })
 export class MainComponent implements OnInit {
+  constructor(
+    private modalService: ModalService,
+    private http: HttpClientModule
+    ) { }
+
   inputs: DeviceInput[] = [];
 
   amountItems: number = 0;
   generatePressed: boolean = false;
 
-  constructor(private modalService: ModalService) { }
+  currentView: string = "add";
+  showAdd: boolean = true;
+  showSearch: boolean = false;
+
+
 
   ngOnInit(): void {
   }
@@ -55,6 +69,22 @@ export class MainComponent implements OnInit {
 
   openExportPopUp(id: string): void {
     this.modalService.open(id);
+  }
+
+  switchViewToAdd():void{
+    if (this.currentView != "add") {
+      this.showAdd = true;
+      this.showSearch = false;
+      this.currentView = "add";
+    }
+  }
+
+  switchViewToSearch():void{
+    if (this.currentView != "search") {
+      this.showAdd = false;
+      this.showSearch = true;
+      this.currentView = "search";
+    }
   }
 }
 
