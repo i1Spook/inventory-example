@@ -1,4 +1,5 @@
 ﻿import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
+import { MainComponent } from '../main/main.component';
 
 import { ModalService } from './modal.service';
 
@@ -12,7 +13,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     @Input()id!: string;
     private element: any;
 
-    constructor(private modalService: ModalService, private el: ElementRef) {
+    constructor(private modalService: ModalService, private el: ElementRef, private main: MainComponent) {
         this.element = el.nativeElement;
     }
 
@@ -30,6 +31,9 @@ export class ModalComponent implements OnInit, OnDestroy {
         this.element.addEventListener('click', (el: { target: { className: string; }; }) => {
             if (el.target.className === 'jw-modal') {
                 this.close();
+                this.main.addView = true;
+                this.main.searchView = false;
+                this.main.checkedItems = [];
             }
         });
 

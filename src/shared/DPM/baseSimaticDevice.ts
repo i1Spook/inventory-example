@@ -1,17 +1,17 @@
-export class DBInput {
-    DPMId: string;
-    deviceType: string;
+export class BaseSimaticDevice {
+    id: string;
+    typeName: string;
     mlfb: string;
+    serialNumber: string;
     inventoryNumber: string;
     prototypeId: string;
-    serialNumber: string;
 
     constructor(){
-        this.DPMId = "";
-        this.deviceType = "";
+        this.id = "";
+        this.typeName = "";
         this.mlfb = "";
+        this.serialNumber = "";
         this.inventoryNumber = "";
         this.prototypeId = "";
-        this.serialNumber = "";
     }
 }

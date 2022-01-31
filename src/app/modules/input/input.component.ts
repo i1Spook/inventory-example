@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { DeviceInput } from 'src/shared/device-input';
 
 @Component({
@@ -11,6 +11,8 @@ export class InputComponent implements OnInit {
   added: boolean = false;
 
   @Output() itemValid = new EventEmitter<DeviceInput>();
+
+  @Input() inputs?: DeviceInput[]
 
   constructor() {
     this.input = new DeviceInput();

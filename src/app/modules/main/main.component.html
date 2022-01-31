@@ -1,34 +1,37 @@
 <div id="main-page">
     <div id="page-header">
-        <div id="title">Inventory Monitor</div>
+        <div id="title">
+            <a id="title-link" href="index.html">
+                Inventory Monitor
+            </a>
+        </div>
         <div id="view-nav">
-            <button id="view-add-btn" (click)="switchViewToAdd()" [ngStyle]="{'color': this.showAdd ? 'black' : 'lightgrey'}">Add Devices</button>
-            <div class="vertical"></div>
-            <button id="view-search-btn" (click)="switchViewToSearch()" [ngStyle]="{'color': this.showSearch ? 'black' : 'lightgrey'}">Search Devices</button>
+            <button id="view-btn" (click)="openSearchDevicesPopUp('search-modal')">Search existing Devices...</button>
         </div>
     </div>
     <hr class="linebreak" id="top-linebreak"/>
-    <app-input *ngIf="this.showAdd" (itemValid)="addItem($event)"></app-input>
-    <app-table *ngIf="this.showAdd" (deleteEntryRequest)="deleteItem($event)" [items]="inputs"></app-table>
+    <app-input (itemValid)="addItem($event)" [inputs]="inputs"></app-input>
+    <app-table [addView]="addView" (deleteEntryRequest)="deleteItem($event)" [items]="inputs"></app-table>
 
-    <app-search *ngIf="this.showSearch"></app-search>
-    <app-table2 *ngIf="this.showSearch"></app-table2>
-
-    <div *ngIf="this.showAdd" id="bottom-button-container">
+    <div id="bottom-button-container">
         <div *ngIf="this.amountItems > 0">
             <button *ngIf="!this.generatePressed" id="generate-button" class="bottom-buttons" (click)="generateIds()">Generate IDs</button>
             <button *ngIf="this.amountItems > 0 && this.generatePressed" id="openExport-button" class="bottom-buttons" (click)="openExportPopUp('export-modal')">Export...</button>
         </div>
     </div>
-
-    <div *ngIf="this.showSearch" id="bottom-button-container">
-        <div>
-            <button id="openExport-button" class="bottom-buttons" (click)="openExportPopUp('export-modal')">Export...</button>
-        </div>
-    </div>
     
     <jw-modal id="export-modal">
         <app-exports [populatedInputs]="inputs"></app-exports>
+    </jw-modal>
+
+    <jw-modal id="search-modal">
+        <app-search (updateDeviceArrayRequest)="updateDeviceArray($event)" [allDevicesArray]="devicesAsInputs"></app-search>
+        <app-table [searchView]="searchView" (selectEntryRequest)="selectItem($event)" [items]="filteredSearch"></app-table>
+        <hr class="linebreak" id="bottom-linebreak"/>
+        <div id="bottom-button-container">
+            <button id="close-search-button" class="bottom-buttons" (click)="closeSearch('search-modal')">Close</button>
+            <button id="open-search-button" class="bottom-buttons" (click)="addToListFromApi('search-modal')">Add {{checkedItems.length}} item(s) to List</button>
+        </div>
     </jw-modal>
     
     <hr class="linebreak" id="bottom-linebreak"/>

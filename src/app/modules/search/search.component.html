@@ -1,13 +1,13 @@
 <div id="search-bar">
     <div id="search-bar-title" class="input-container">
-      <div>DPM Devices</div>
+      <div>{{filteredArray?.length}} DPM Devices found</div>
     </div>
   
     <div class="search-container">
       <label class="search-label" for="search">Search</label>
-      <form action="/" method="GET" class="form">
-        <input type="search" maxlength="240" id="search" placeholder="Search for devices...">
-        <button type="submit" class="search-button">
+      <form action="/" method="post" class="form">
+        <input name="Search Bar" (keyup)="getSearchResult()" [(ngModel)]="searchTerm" type="search" maxlength="240" id="search" placeholder="Search for devices...">
+        <button type="submit" class="search-button" (click)="getSearchResult()">
             <img src="assets\1024px-Search_Icon.svg.png" height="25" width="25">
         </button>
       </form>

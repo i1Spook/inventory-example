@@ -19,12 +19,16 @@
     font-size: 2.5em;
 }
 
+#title-link{
+    color: black;
+}
+
 #view-nav{
     display: flex;
     margin-left: 1%;
 }
 
-#view-add-btn, #view-search-btn{
+#view-btn{
     margin-left: 0%;
     min-width: 6em;
     min-height: 1em;
@@ -33,12 +37,15 @@
     border-color: transparent;
 }
 
-#view-add-btn, #view-search-btn{
+#view-btn{
     color: black;
 }
 
-#view-add-btn:active, #view-search-btn:active{
+#view-btn:active{
     color:orange;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: lightgrey;
 }
 
 .vertical{
@@ -71,4 +78,8 @@
 
 .bottom-buttons:active{
     color:orange;
+}
+
+#close-search-button{
+    margin-right: 100em;
 }

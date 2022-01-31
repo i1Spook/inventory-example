@@ -15,9 +15,101 @@
             <div id="table-item-sn" class="table-items">{{item.serialNumber}}</div>
             <div id="table-item-in" class="table-items">{{item.inventoryNumber}}</div>
             <div id="table-item-protID" class="table-items">{{item.prototypeId}}</div>
-            <div id="table-item-delete" class="table-items">
-                <button id="delete-button-{{i}}" (click)="deleteEntry(i)" class="table-item-delete-button">x</button>
+            <div id="table-item-action" class="table-items">
+                <button *ngIf="addView" id="delete-button-{{i}}" (click)="deleteEntry(i)" class="table-item-delete-button">x</button>
+                <input type="checkbox" *ngIf="searchView" id="select-button-{{i}}" (click)="selectEntry(i)" class="table-item-select-button">
             </div>
         </div>
     </div>    
 </div>
+
+
+
+
+<!-- <div id="table-container">
+    <div id="table-header-container">
+
+        <div class="single-header-container push-DPMID" id="single-header-container-DPMID">
+            <button id="table-header-DPMID" class="table-header" (click)="orderByAscDesc('DPMID')">DPM ID</button>
+            <div class="sort-arrows-container">
+                <button type="submit" class="up-arrow-btn" id="DPMID-Up">
+                    <img *ngIf="this.dpmidAscending" src="assets\up-arrow.png" height="10.5" width="21" class="up-arrow">
+                </button>
+                <button type="submit" class="down-arrow-btn" id="DPMID-Down">
+                    <img *ngIf="this.dpmidDescending" src="assets\down-arrow.png" height="10.5" width="21" class="down-arrow">
+                </button>
+            </div>
+        </div>
+
+        <div class="single-header-container push-dt">
+            <div id="table-header-dt" class="table-header" (click)="orderByAscDesc('dt')">Device Type</div>
+            <div class="sort-arrows-container">
+                <button type="submit" class="up-arrow-btn" id="dt-Up">
+                    <img *ngIf="this.dtAscending" src="assets\up-arrow.png" height="10.5" width="21" class="up-arrow">
+                </button>
+                <button type="submit" class="down-arrow-btn" id="dt-Down">
+                    <img *ngIf="this.dtDescending" src="assets\down-arrow.png" height="10.5" width="21" class="down-arrow">
+                </button>
+            </div>
+        </div>
+
+        <div class="single-header-container push-mlfb">
+            <div id="table-header-mlfb" class="table-header" (click)="orderByAscDesc('mlfb')">MLFB</div>
+            <div class="sort-arrows-container">
+                <button type="submit" class="up-arrow-btn" id="mlfb-Up">
+                    <img *ngIf="this.mlfbAscending" src="assets\up-arrow.png" height="10.5" width="21" class="up-arrow">
+                </button>
+                <button type="submit" class="down-arrow-btn" id="mlfb-Down">
+                    <img *ngIf="this.mlfbDescending" src="assets\down-arrow.png" height="10.5" width="21" class="down-arrow">
+                </button>
+            </div>
+        </div>
+
+        <div class="single-header-container push-sn">
+            <div id="table-header-sn" class="table-header" (click)="orderByAscDesc('sn')">Serial Nr.</div>
+            <div class="sort-arrows-container">
+                <button type="submit" class="up-arrow-btn" id="sn-Up">
+                    <img *ngIf="this.snAscending" src="assets\up-arrow.png" height="10.5" width="21" class="up-arrow">
+                </button>
+                <button type="submit" class="down-arrow-btn" id="sn-Down">
+                    <img *ngIf="this.snDescending" src="assets\down-arrow.png" height="10.5" width="21" class="down-arrow">
+                </button>
+            </div>
+        </div>
+
+        <div class="single-header-container push-in">
+            <div id="table-header-in" class="table-header" (click)="orderByAscDesc('in')">Inventory Nr.</div>
+            <div class="sort-arrows-container">
+                <button type="submit" class="up-arrow-btn" id="in-Up">
+                    <img *ngIf="this.inAscending" src="assets\up-arrow.png" height="10.5" width="21" class="up-arrow">
+                </button>
+                <button type="submit" class="down-arrow-btn" id="in-Down">
+                    <img *ngIf="this.inDescending" src="assets\down-arrow.png" height="10.5" width="21" class="down-arrow">
+                </button>
+            </div>
+        </div>
+
+        <div class="single-header-container push-protID">
+            <div id="table-header-protID" class="table-header" (click)="orderByAscDesc('protID')">Prototype ID</div>
+            <div class="sort-arrows-container">
+                <button type="submit" class="up-arrow-btn" id="protID-Up">
+                    <img *ngIf="this.protIDAscending" src="assets\up-arrow.png" height="10.5" width="21" class="up-arrow">
+                </button>
+                <button type="submit" class="down-arrow-btn" id="protID-Down">
+                    <img *ngIf="this.protIDDescending" src="assets\down-arrow.png" height="10.5" width="21" class="down-arrow">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="table-items-container">
+        <div id="table-item-container" *ngFor="let item of items; let i = index;">
+            <div id="table-item-DPMID" class="table-items">{{item.DPMId}}</div>
+            <div id="table-item-dt" class="table-items">{{item.deviceType}}</div>
+            <div id="table-item-mlfb" class="table-items">{{item.mlfb}}</div>
+            <div id="table-item-sn" class="table-items">{{item.serialNumber}}</div>
+            <div id="table-item-in" class="table-items">{{item.inventoryNumber}}</div>
+            <div id="table-item-protID" class="table-items">{{item.prototypeId}}</div>
+        </div>
+    </div>    
+</div> -->

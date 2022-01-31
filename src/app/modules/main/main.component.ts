@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DeviceInput } from 'src/shared/device-input';
 import { ModalService } from 'src/app/modules/_modal';
-import { DBInput } from 'src/shared/DBInput';
 
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
+import { DpmApiService } from 'src/app/dpm-api.service';
+import { BaseSimaticDevice } from 'src/shared/DPM/baseSimaticDevice';
+import { BaseApiResult } from 'src/shared/DPM/baseApiResult';
 
 @Component({
   selector: 'app-main',
@@ -13,24 +13,110 @@ import { Observable } from 'rxjs';
   styleUrls: ['./main.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
+
 export class MainComponent implements OnInit {
   constructor(
     private modalService: ModalService,
-    private http: HttpClientModule
+    private http: HttpClientModule,
+    private apiService: DpmApiService
     ) { }
 
+ 
+  devicesAsInputs: DeviceInput[] = [];
   inputs: DeviceInput[] = [];
 
   amountItems: number = 0;
   generatePressed: boolean = false;
 
-  currentView: string = "add";
-  showAdd: boolean = true;
-  showSearch: boolean = false;
+  filteredSearch: DeviceInput[] = [];
+  checkedItems: DeviceInput[] = [];
 
-
+  addView: boolean = true;
+  searchView: boolean = false;
 
   ngOnInit(): void {
+
+  }
+
+  openSearchDevicesPopUp(id: string){
+    this.getAllDevices();
+    this.addView = false;
+    this.searchView = true;
+    this.modalService.open(id);
+  }
+
+  // Asynchrones Laden
+  getAllDevices(): void{
+
+    this.devicesAsInputs = [];
+
+    this.apiService.getAllPc().subscribe(result => {
+      this.addDevicesFromDpm(result)
+    });
+
+    this.apiService.getAllPlc().subscribe(result => {
+      this.addDevicesFromDpm(result)
+    });
+
+    this.apiService.getAllPanel().subscribe(result => {
+      this.addDevicesFromDpm(result)
+    });
+
+    this.filteredSearch = this.devicesAsInputs;
+  }
+
+  addDevicesFromDpm(result: BaseApiResult){
+    if (result.isSuccessful && result.resultContent != null && result.resultContent.length > 0) {
+
+      for (let index = 0; index < result.resultContent.length; index++) {
+        const element = result.resultContent[index];
+        let input = new DeviceInput();
+        input.DPMId = element.id;
+        input.deviceType = element.typeName;
+        input.inventoryNumber = element.inventoryNumber;
+        input.mlfb = element.mlfb;
+        input.prototypeId = element.prototypeId;
+        input.serialNumber = element.serialNumber;
+
+        this.devicesAsInputs.push(input);
+      }
+    }
+  }
+
+  addToListFromApi(id: string){
+    console.log("added");
+    this.addView = true;
+    this.searchView = false;
+    this.modalService.close(id);
+
+
+    // Temporary array of selected items is added to "Main" input array
+    this.inputs = this.inputs.concat(this.checkedItems);
+    this.checkedItems = [];
+    this.generatePressed = false;
+  }
+
+  /*
+  Checks if an item has already been selected, if not, adds it to temporary array  
+  */
+  selectItem(selectedItemIndex: number) {
+    console.log("selected #" + selectedItemIndex)
+    let sliced: boolean = false;
+
+    for (let index = 0; index < this.checkedItems.length; index++) {
+      if (this.checkedItems[index].DPMId == this.filteredSearch[selectedItemIndex].DPMId &&
+        this.checkedItems[index].deviceType == this.filteredSearch[selectedItemIndex].deviceType &&
+        this.checkedItems[index].inventoryNumber == this.filteredSearch[selectedItemIndex].inventoryNumber &&
+        this.checkedItems[index].mlfb == this.filteredSearch[selectedItemIndex].mlfb &&
+        this.checkedItems[index].prototypeId == this.filteredSearch[selectedItemIndex].prototypeId &&
+        this.checkedItems[index].serialNumber == this.filteredSearch[selectedItemIndex].serialNumber) {
+        this.checkedItems.splice(index, 1);
+        sliced = true;
+      }
+    }
+    if (!sliced) {
+      this.checkedItems.push(this.filteredSearch[selectedItemIndex]);
+    }
   }
 
   addItem(item: DeviceInput): void {
@@ -71,20 +157,15 @@ export class MainComponent implements OnInit {
     this.modalService.open(id);
   }
 
-  switchViewToAdd():void{
-    if (this.currentView != "add") {
-      this.showAdd = true;
-      this.showSearch = false;
-      this.currentView = "add";
-    }
+  closeSearch(id: string){
+    this.addView = true;
+    this.searchView = false;
+    this.modalService.close(id);
   }
 
-  switchViewToSearch():void{
-    if (this.currentView != "search") {
-      this.showAdd = false;
-      this.showSearch = true;
-      this.currentView = "search";
-    }
+  updateDeviceArray(array: any){
+    console.log("reached main update function")
+    this.filteredSearch = array;
   }
 }
 

@@ -8,7 +8,7 @@ export class DeviceInput {
 
     constructor(){
         this.DPMId = ""; /* added default value for testing purposes */
-        this.deviceType = "";
+        this.deviceType = "PC";
         this.mlfb = "6ES7516-3AN01-0AB0";
         this.inventoryNumber = "9999999999";
         this.prototypeId = "123 123";

@@ -16,7 +16,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { SearchComponent } from './modules/search/search.component';
-import { Table2Component } from './modules/table2/table2.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
@@ -29,7 +28,6 @@ import { CommonModule } from '@angular/common';
     ExportsComponent,
     TooltipComponent,
     SearchComponent,
-    Table2Component
   ],
   imports: [
     BrowserModule,
